@@ -1,43 +1,21 @@
 import "../scss/app.scss";
 
-
-
+const body = document.getElementsByTagName("body")[0];
+const df = new DocumentFragment();
 window.addEventListener("DOMContentLoaded", () => {
   // This block will be executed once the page is loaded and ready
-  const body = document.getElementsByTagName("body")[0];
-  body.addEventListener("click",()=>{
-    const article1 = document.createElement("article");
-    article1.classList.add("message");
-    article1.innerText="Loren ipsum"
-
-    const article2 = document.createElement("article");
-    article2.classList.add("message");
-    article2.innerText="Loren ipsum"
-
-    const article3 = document.createElement("article");
-    article3.classList.add("message");
-    article3.innerText="Loren ipsum"
-
-    const article4 = document.createElement("article");
-    article4.classList.add("message");
-    article4.innerText="Loren ipsum"
-
-    const article5 = document.createElement("article");
-    article5.classList.add("message");
-    article5.innerText="Loren ipsum"
-
-    body.innerHTML="";
-    body.appendChild(article1);
-    body.appendChild(article2);
-    body.appendChild(article3);
-    body.appendChild(article4);
-    body.appendChild(article5);
-  });
-
   
-    
 
+  for(let i =0; i<5;i++){
+    const article = document.createElement("article");
+    article.classList.add("message");
+    article.innerText="Loren ipsum"
+    df.appendChild(article);
+  }
 
 });
 
 
+body.addEventListener("click",()=>{
+  body.replaceChildren(df);
+});
