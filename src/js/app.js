@@ -9,6 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
   for(let i =0; i<5;i++){
     const article = document.createElement("article");
     article.classList.add("message");
+    article.innerText="Loren ipsum"
     df.appendChild(article);
   }
 
@@ -16,5 +17,5 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 body.addEventListener("click",()=>{
-  body.appendChild(df);
+  body.replaceChildren(df);
 });
