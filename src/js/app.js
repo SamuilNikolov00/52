@@ -8,7 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   for(let i =0; i<5;i++){
     const article = document.createElement("article");
-    article.classList.push("message");
+    article.classList.add("message");
     df.appendChild(article);
   }
 
